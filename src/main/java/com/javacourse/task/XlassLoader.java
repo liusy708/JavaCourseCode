@@ -28,7 +28,7 @@ public class XlassLoader extends ClassLoader {
     }
 
     @Override
-    protected Class<?> findClass(String name) throws ClassNotFoundException {
+    protected Class<?> findClass(String name) {
         byte[] bytes = null;
 
         try {
