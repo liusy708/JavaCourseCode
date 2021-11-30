@@ -1,25 +1,23 @@
-package threads.method03;
+package threads;
 
-import java.util.concurrent.CountDownLatch;
-
-public class ThreadTwo extends Thread {
-
-    private CountDownLatch latch;
-
-    public ThreadTwo(CountDownLatch latch) {
-        this.latch = latch;
-    }
+public class ChildThread01 extends Thread {
 
     @Override
     public void run() {
         System.out.println("线程2开始");
-
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         System.out.println("线程2结束");
-        latch.countDown();
+        Method01.flag = fibo(3);
     }
+
+    private static int fibo(int a) {
+        if ( a < 2)
+            return 1;
+        return fibo(a-1) + fibo(a-2);
+    }
+
 }

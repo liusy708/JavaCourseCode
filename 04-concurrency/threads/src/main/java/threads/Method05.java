@@ -1,13 +1,17 @@
-package threads.method05;
+package threads;
+
+import threads.ChildThread02;
 
 /**
  * 方法五：判断线程2是否还在存活
  */
-public class ThreadOne {
+public class Method05 {
+
+    public static int flag = 0;
 
     public static void main(String[] args) {
         System.out.println("线程1开始");
-        Thread t2 = new threads.method01.ThreadTwo();
+        Thread t2 = new ChildThread02();
         t2.start();
 
         while (true) {
@@ -15,6 +19,8 @@ public class ThreadOne {
                 break;
             }
         }
-        System.out.println("线程1结束");
+        if (flag > 0) {
+            System.out.println("线程1结束");
+        }
     }
 }

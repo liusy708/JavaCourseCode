@@ -1,4 +1,4 @@
-package threads.method04;
+package threads;
 
 
 import java.util.concurrent.*;
@@ -6,7 +6,9 @@ import java.util.concurrent.*;
 /**
  * 方法四：使用future.get方法
  */
-public class ThreadOne {
+public class Method04 {
+    public static int flag = 0;
+
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         System.out.println("线程1开始");
 
@@ -15,10 +17,13 @@ public class ThreadOne {
             System.out.println("线程2开始");
             Thread.sleep(2000);
             System.out.println("线程2结束");
-            return null;
+            return 100;
         };
         Future future = executor.submit(myCallable);
-        future.get();
-        System.out.println("线程1结束");
+        flag = (int) future.get();
+        if (flag > 0) {
+            System.out.println("线程1结束");
+        }
+        executor.shutdown();
     }
 }
