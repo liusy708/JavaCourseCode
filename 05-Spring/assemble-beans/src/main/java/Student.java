@@ -20,11 +20,11 @@ public class Student implements Serializable, BeanNameAware, ApplicationContextA
     private String beanName;
     private ApplicationContext applicationContext;
 
-    public void init(){
+    public void init() {
         System.out.println("hello...........");
     }
 
-    public static Student create(){
+    public static Student create() {
         return new Student(102, "KK102", null, null);
     }
 

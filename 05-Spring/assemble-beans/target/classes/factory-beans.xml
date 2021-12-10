@@ -5,10 +5,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="beanFactoryDemo" class="BeanFactoryDemo" />
+    <bean id="beanFactoryDemo" class="BeanFactoryDemo"/>
 
     <bean id="student102" factory-bean="beanFactoryDemo" factory-method="createInstance">
-        <property name="id" value="102" />
-        <property name="name" value="student102" />
+        <property name="id" value="102"/>
+        <property name="name" value="student102"/>
     </bean>
+
+    <bean id="beanFactoryDemo" class="BeanFactoryDemo"/>
 </beans>

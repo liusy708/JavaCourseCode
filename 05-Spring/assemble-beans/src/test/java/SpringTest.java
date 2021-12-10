@@ -18,4 +18,4 @@ public class SpringTest {
         System.out.println(student1.getName());
         Assert.assertEquals("student100", student1.getName());
     }
- }
+}
